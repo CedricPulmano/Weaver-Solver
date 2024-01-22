@@ -5,3 +5,7 @@ The Weaver Solver is a Python program designed to solve word transformation puzz
 ## How it Works
 
 The program uses breadth-first search to find the shortest answer. Currently, I am working on improving the time and space complexity of the application.
+
+## How to Run
+
+`python -m memory_profiler main.py`

@@ -5,8 +5,8 @@ from typing import Set, List, Optional
 from helpers.add_words_to_set import addWordsToSet
 from helpers.add_letters_to_array import addLettersToArray
 
-startingWord = "lost"
-targetWord = "soul"
+startingWord = "sore"
+targetWord = "head"
 
 @profile
 def main() -> Optional[List[str]]:
@@ -31,7 +31,7 @@ def main() -> Optional[List[str]]:
     
 
 # search through all possibilities
-def exploreWord(queue: Queue[List[str]], visited: Set[str], validWords: Set[str], alphabet: List[str], targetWord: str) -> Optional[List[str]]:  
+def exploreWord(queue: Queue[List[str]], visited: Set[str], validWords: Set[str], alphabet: List[str], targetWord: str) -> List[str]:  
     # queue is empty; exhausted all options
     while not queue.empty():
         path = queue.get()
