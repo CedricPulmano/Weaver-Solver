@@ -1,8 +1,8 @@
 import time
 from pathlib import Path
 
-wordLength = 5
-fileName = "five-letter-words"
+wordLength = 6
+fileName = "six-letter-words"
 
 # finds words that are of the desired length
 # creates a .txt file with all of the words in /valid-words

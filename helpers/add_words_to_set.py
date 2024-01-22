@@ -1,9 +1,5 @@
 from pathlib import Path
-
-wordLengthFiles = {
-    4: "four-letter-words.txt",
-    5: "five-letter-words.txt"
-}
+from helpers.word_length_file_map import wordLengthFiles
 
 # add all words of the same length to a set
 def addWordsToSet(wordLength: int):

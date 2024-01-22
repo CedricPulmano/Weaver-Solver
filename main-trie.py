@@ -6,8 +6,8 @@ from helpers.TrieStructure import Trie
 from helpers.add_words_to_trie import addWordsToTrie
 from helpers.add_letters_to_array import addLettersToArray
 
-startingWord = "perch"
-targetWord = "roost"
+startingWord = "charge"
+targetWord = "comedo"
 
 @profile
 def main() -> Optional[List[str]]:
@@ -41,9 +41,6 @@ def exploreWord(queue: Queue[List[str]], visited: Set[str], validWords: Trie, al
         # already tested
         if word in visited:
             continue
-        # word not in word list
-        if not validWords.searchWord(word):
-            continue
         # word matches targetWord
         if word == targetWord:
             return path
@@ -54,6 +51,9 @@ def exploreWord(queue: Queue[List[str]], visited: Set[str], validWords: Trie, al
         for s in range(len(word)):
             for letter in alphabet:
                 newWord = word[:s] + letter + word[s+1:]
+                # word not in word list
+                if not validWords.searchWord(newWord):
+                    continue
                 newPath = path.copy()
                 newPath.append(newWord)
                 queue.put(newPath)

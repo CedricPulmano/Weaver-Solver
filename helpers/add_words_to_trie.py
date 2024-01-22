@@ -1,10 +1,6 @@
 from pathlib import Path
 from helpers.TrieStructure import Trie
-
-wordLengthFiles = {
-    4: "four-letter-words.txt",
-    5: "five-letter-words.txt"
-}
+from helpers.word_length_file_map import wordLengthFiles
 
 # add all words of the same length to a trie
 def addWordsToTrie(wordLength: int):

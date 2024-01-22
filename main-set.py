@@ -5,8 +5,8 @@ from typing import Set, List, Optional
 from helpers.add_words_to_set import addWordsToSet
 from helpers.add_letters_to_array import addLettersToArray
 
-startingWord = "sore"
-targetWord = "head"
+startingWord = "charge"
+targetWord = "comedo"
 
 @profile
 def main() -> Optional[List[str]]:
@@ -36,13 +36,9 @@ def exploreWord(queue: Queue[List[str]], visited: Set[str], validWords: Set[str]
     while not queue.empty():
         path = queue.get()
         word = path[-1]
-        # print(word)
     
         # already tested
         if word in visited:
-            continue
-        # word not in word list
-        if word not in validWords:
             continue
         # word matches targetWord
         if word == targetWord:
@@ -54,6 +50,9 @@ def exploreWord(queue: Queue[List[str]], visited: Set[str], validWords: Set[str]
         for s in range(len(word)):
             for letter in alphabet:
                 newWord = word[:s] + letter + word[s+1:]
+                # word not in word list
+                if newWord not in validWords:
+                    continue
                 newPath = path.copy()
                 newPath.append(newWord)
                 queue.put(newPath)
